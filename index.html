@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blusa Viajante</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="tooplate-winter-gallery.css">
+</head>
+<body>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", function() {
+            // Remove a classe active de todos
+            filterButtons.forEach(b => b.classList.remove("active"));
+            // Adiciona active ao botão clicado
+            btn.classList.add("active");
+
+            // Pega o ID da seção
+            const targetId = btn.getAttribute("data-filter");
+            const targetSection = document.getElementById(targetId);
+
+            if(targetSection){
+                targetSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    });
+});
+</script>
+
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 3l3 2h6l3-2 2 4-4 2v11a2 2 0 0 1-2 2h-6a2 2 0 0 1-2-2v-11l-4-2 2-4z"/>
+                </svg>
+                BLUSA VIAJANTE
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#dicas">Dicas de viagem</a></li>
+                <li><a href="#planejar">Planeje sua viagem</a></li>
+                <li><a href="#portugal">Morar em Portugal</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-bg"></div>
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>BLUSA VIAJANTE</h1>
+            <p>Histórias reais, viagens possíveis.</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-container" id="sobre">
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="mim">Sobre mim</button>
+            <button class="filter-btn" data-filter="blusa">Por que Blusa Viajante?</button>
+            <button class="filter-btn" data-filter="encontrar">O que você vai encontrar por aqui</button>
+        </div>
+    </section>
+
+    <!-- Sobre mim -->
+    <section class="about-section" id="mim">
+        <h2>Sobre mim</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Sou Andressa, brasileira que trocou o sul do Brasil pelo interior de Portugal e descobriu que a vida é feita de mudanças — e de viagens.</p>
+                <p>Engenheira ambiental, pesquisadora e apaixonada por experiências, escrevo para ajudar pessoas que, assim como eu, acreditam que viver é explorar, sentir e descobrir.</p>
+                <p>Aqui compartilho como planejo minhas viagens, meus perrengues chiques de pobre, aprendizados, alegrias e tudo aquilo que faz parte da aventura de morar fora.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/banco.JPEG" alt="Andressa viajando em Portugal">
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que Blusa Viajante -->
+    <section class="about-section" id="blusa">
+        <h2>Por que Blusa Viajante?</h2>
+
+        <div class="about-content blusa-layout">
+            <div class="about-text">
+                <p>Em 2024, embarquei com meus pais em uma aventura de 30 dias pela Europa, passando por 8 países… e tudo com apenas uma mochila cada um!</p>
+                <p>Tínhamos poucos itens, e uma blusa acabou se tornando nossa companheira de viagem — eu e minha mãe a usamos em vários lugares. Pelo caminho, íamos lavando nossas roupas e seguindo viagem.</p>
+                <p>Viajar é sobre histórias que ficam na lembrança. No final, vamos lembrar dos lugares que conhecemos, não das roupas que usamos.</p>
+                <p>E é exatamente esse o propósito do Blusa Viajante: mostrar que viajar é sobre experiências, descobertas e momentos que ficam para sempre.</p>
+            </div>
+
+            <div class="blusa-carousel">
+                <button class="blusa-prev" aria-label="Imagem anterior">‹</button>
+
+                <div class="blusa-slider">
+                    <div class="blusa-slide active">
+                        <img src="images/mochilas.jpg" alt="Foto mochilas">
+                    </div>
+                    <div class="blusa-slide">
+                        <img src="images/blusa1.jpg" alt="Foto usando a blusa em viagem">
+                    </div>
+                    <div class="blusa-slide">
+                        <img src="images/blusa2.jpg" alt="Foto da blusa em outro destino">
+                    </div>
+                    <div class="blusa-slide">
+                        <img src="images/blusa3.jpg" alt="Foto em família durante a viagem">
+                    </div>
+                </div>
+
+                <button class="blusa-next" aria-label="Próxima imagem">›</button>
+
+                <div class="blusa-dots">
+                    <span class="dot active" data-index="0"></span>
+                    <span class="dot" data-index="1"></span>
+                    <span class="dot" data-index="2"></span>
+                    <span class="dot" data-index="3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O que você vai encontrar por aqui -->
+
+    <section class="about-section" id="encontrar">
+  <h2>O que você vai encontrar por aqui?</h2>
+  <div class="about-cards">
+    <div class="card">
+      <span>✈️</span>
+      <h3>Dicas práticas</h3>
+      <p>Como planejar cada viagem</p>
+    </div>
+    <div class="card">
+      <span>💰</span>
+      <h3>Dicas econômicas</h3>
+      <p>Como conseguir descontos</p>
+    </div>
+    <div class="card">
+      <span>📍</span>
+      <h3>Roteiros & curiosidades</h3>
+      <p>Informações sobre lugares</p>
+    </div>
+  </div>
+</section>
+
+    <!-- Contato -->
+    <section class="contact-section" id="contact">
+        <h2>Fale comigo</h2>
+        <p>Quer ajuda para planejar a sua próxima viagem dos sonhos?</p>
+
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Nome</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mensagem</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Enviar mensagem</button>
+        </form>
+
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Blusa Viajante • Template por <a rel="nofollow" href="https://www.tooplate.com" target="_blank">Tooplate</a></p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="tooplate-winter-scripts.js"></script>
+</body>
+</html>
